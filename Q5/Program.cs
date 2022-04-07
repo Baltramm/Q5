@@ -42,9 +42,9 @@ namespace Q5
 
 
 
-        static int[] GetArray()
+        static int[] GetArray(int num = 5)
         {
-            var result = new int[5];
+            var result = new int[num];
             for (int i = 0; i < result.Length; i++)
             {
                 Console.WriteLine("Введите элемент массива номер {0}", i + 1);
@@ -76,30 +76,11 @@ namespace Q5
 
         static void Main(string[] args)
         {
-            var (name, age) = ("Евгения",27);
-            Console.WriteLine("Ваше имя: {0}", name);
-            Console.WriteLine("Ваш возраст: {0}", age);
-            Console.Write("Введите имя: ");
-            name = Console.ReadLine();
-            Console.Write("Введите возраст с цифрами: ");
-            age = Convert.ToInt32(Console.ReadLine());
+          
 
-            Console.WriteLine("Ваше имя: {0}", name);
-            Console.WriteLine("Ваш возраст: {0}", age);
+           var array= GetArray();
 
-            var favcolors = new string[3];
-            for (int i = 0; i < favcolors.Length;i++)
-            {
-                favcolors[i] = ShowColor(name,age);
-            }
-
-            Console.WriteLine("Ваши любимые цвета:");
-            foreach(var color in favcolors)
-            {
-                Console.WriteLine(color);
-            }
-
-            Console.ReadKey();
+           var sortedarray = SortArray(array) ;
         }
     }
 }
