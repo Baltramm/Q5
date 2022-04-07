@@ -4,53 +4,20 @@ namespace Q5
 {
     class Program
     {
-        static string ShowColor(string username, int userage)
+
+        static void ShowArray(int[] array, bool IsSort = false)
         {
-            Console.WriteLine("{0},{1}\n Напишите свой любимый цвет на английском с маленькой буквы", username, userage);
-            var color = Console.ReadLine();
-
-            switch (color)
+            var temp = array;
+            if (IsSort)
             {
-                case "red":
-                    Console.BackgroundColor = ConsoleColor.Red;
-                    Console.ForegroundColor = ConsoleColor.Black;
-
-                    Console.WriteLine("Your color is red!");
-                    break;
-
-                case "green":
-                    Console.BackgroundColor = ConsoleColor.Green;
-                    Console.ForegroundColor = ConsoleColor.Black;
-
-                    Console.WriteLine("Your color is green!");
-                    break;
-                case "cyan":
-                    Console.BackgroundColor = ConsoleColor.Cyan;
-                    Console.ForegroundColor = ConsoleColor.Black;
-
-                    Console.WriteLine("Your color is cyan!");
-                    break;
-                default:
-                    Console.BackgroundColor = ConsoleColor.Yellow;
-                    Console.ForegroundColor = ConsoleColor.Red;
-
-                    Console.WriteLine("Your color is yellow!");
-                    break;
+                temp = SortArray(array);
             }
-            return color;
-        }
 
-
-
-        static int[] GetArray(int num = 5)
-        {
-            var result = new int[num];
-            for (int i = 0; i < result.Length; i++)
+            foreach (var item in temp)
             {
-                Console.WriteLine("Введите элемент массива номер {0}", i + 1);
-                result[i] = int.Parse(Console.ReadLine());
+                Console.WriteLine(item);
             }
-            return result;
+
         }
         static int[] SortArray(int[] result)
         {
@@ -69,18 +36,11 @@ namespace Q5
                         result[j] = temp;
                     }
                 }
-                
+
             }
             return result;
         }
-
-        static void Main(string[] args)
-        {
-          
-
-           var array= GetArray();
-
-           var sortedarray = SortArray(array) ;
-        }
+        
     }
 }
+
