@@ -4,7 +4,16 @@ namespace Q5
 {
     class Program
     {
-
+        static int[] GetArray(int num = 5)
+        {
+            var result = new int[num];
+            for (int i = 0; i < result.Length; i++)
+            {
+                Console.WriteLine("Введите элемент массива номер {0}", i + 1);
+                result[i] = int.Parse(Console.ReadLine());
+            }
+            return result;
+        }
         static void ShowArray(int[] array, bool IsSort = false)
         {
             var temp = array;
@@ -40,7 +49,11 @@ namespace Q5
             }
             return result;
         }
-        
+        static void Main(string[] args)
+        {
+            var array = GetArray(10) ;
+            ShowArray(array,true);
+        }
     }
 }
 
