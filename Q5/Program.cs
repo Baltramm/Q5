@@ -4,19 +4,99 @@ namespace Q5
 {
     class Program
     {
+        //static string ShowColor()
+        //{
+        //    Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
+        //    var color = Console.ReadLine();
+
+        //    switch (color)
+        //    {
+        //        case "red":
+        //            Console.BackgroundColor = ConsoleColor.Red;
+        //            Console.ForegroundColor = ConsoleColor.Black;
+
+        //            Console.WriteLine("Your color is red!");
+        //            break;
+
+        //        case "green":
+        //            Console.BackgroundColor = ConsoleColor.Green;
+        //            Console.ForegroundColor = ConsoleColor.Black;
+
+        //            Console.WriteLine("Your color is green!");
+        //            break;
+        //        case "cyan":
+        //            Console.BackgroundColor = ConsoleColor.Cyan;
+        //            Console.ForegroundColor = ConsoleColor.Black;
+
+        //            Console.WriteLine("Your color is cyan!");
+        //            break;
+        //        default:
+        //            Console.BackgroundColor = ConsoleColor.Yellow;
+        //            Console.ForegroundColor = ConsoleColor.Red;
+
+        //            Console.WriteLine("Your color is yellow!");
+        //            break;
+        //    }
+        //    return color;
+        //}
+        //static int[] GetArrayFromConsole()
+        //{
+        //    var result = new int[5];
+        //    int temp;
+        //    for (int i = 0; i < result.Length; i++)
+        //    {
+        //        Console.WriteLine("Введите элемент массива номер {0}", i + 1);
+        //        result[i] = int.Parse(Console.ReadLine());
+        //        for (int j = i + 1; j < result.Length; j++)
+        //        {
+        //            if (result[i] > result[j])
+        //            {
+        //                temp = result[i];
+        //                result[i] = result[j];
+        //                result[j] = temp;
+        //            }
+
+
+
+        //        }
+                
+
+        //    }
+        //    for (int i = 0; i < result.Length; i++)
+        //    {
+        //        Console.WriteLine(result[i]);
+        //    }
+        //    return result;
+        //}
         static void Main(string[] args)
         {
-            (string Name,string []Dishes) User;
-            Console.WriteLine("Введите имя");
-            User.Name = Console.ReadLine();
-            User.Dishes = new string[5];
-            for (int i = 0; i < 5; i++)
-            {
-                Console.WriteLine("Ваше любимое блюдо номер{0}:",i+1);
-                User.Dishes[i] = Console.ReadLine();
-            }
-            Console.Write(User.Dishes);
-            Console.WriteLine(User.Name);
+            //var (name, age) = ("Евгения", 27);
+
+            //Console.WriteLine("Мое имя: {0}", name);
+            //Console.WriteLine("Мой возраст: {0}", age);
+
+            //Console.Write("Введите имя: ");
+            //name = Console.ReadLine();
+            //Console.Write("Введите возрас с цифрами:");
+            //age = Convert.ToInt32(Console.ReadLine());
+
+            //Console.WriteLine("Ваше имя: {0}", name);
+            //Console.WriteLine("Ваш возраст: {0}", age);
+
+           
+            //var favcolors =new string[3];
+
+            //for (int i = 0; i < 3; i++)
+            //{
+                
+            //    favcolors[i] = ShowColor();
+
+            //}
+            //Console.WriteLine("");
+            //foreach (var color in favcolors)
+            //{
+            //    Console.WriteLine(color);
+            //}
         }
     }
 }
