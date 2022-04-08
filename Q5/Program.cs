@@ -4,38 +4,38 @@ namespace Q5
 {
     class Program
     {
-        static int[] GetArray(int num = 5)
+
+        static void SortArray(in int[] array,out int[] sorteddesc,out int[] sortedasc)
         {
-            var result = new int[num];
-            for (int i = 0; i < result.Length; i++)
-            {
-                Console.WriteLine("Введите элемент массива номер {0}", i + 1);
-                result[i] = int.Parse(Console.ReadLine());
-            }
-            return result;
+            sorteddesc = SortArrayDesc(array);
+            sortedasc = SortArrayAsc(array);
         }
-        static void ShowArray(int[] array, bool IsSort = false)
+
+
+
+        static int[] SortArrayDesc(int[] result)
         {
-            var temp = array;
-            if (IsSort)
-            {
-                temp = SortArray(array);
-            }
-
-            foreach (var item in temp)
-            {
-                Console.WriteLine(item);
-            }
-
-        }
-        static int[] SortArray(int[] result)
-        {
-
             int temp;
             for (int i = 0; i < result.Length; i++)
             {
+                for (int j = i + 1; j < result.Length; j++)
+                {
+                    if (result[i] < result[j])
+                    {
+                        temp = result[i];
+                        result[i] = result[j];
+                        result[j] = temp;
+                    }
+                }
+            }
+            return result;
+        }
 
-
+        static int[] SortArrayAsc(int[] result)
+        {
+            int temp;
+            for (int i = 0; i < result.Length; i++)
+            {
                 for (int j = i + 1; j < result.Length; j++)
                 {
                     if (result[i] > result[j])
@@ -45,14 +45,35 @@ namespace Q5
                         result[j] = temp;
                     }
                 }
-
             }
             return result;
         }
+
+
+        static int[] GetArray(ref int num)
+        {
+            var result = new int[num];
+            for (int i = 0; i < result.Length; i++)
+            {
+                Console.WriteLine("Введите элемент массива номер {0}", i + 1);
+                result[i] = int.Parse(Console.ReadLine());
+            }
+            return result;
+        }
+        static void GetName(ref string  name)
+        {
+            Console.WriteLine("Введите имя");
+            name = Console.ReadLine();
+
+        }
+        
+
         static void Main(string[] args)
         {
-            var array = GetArray(10) ;
-            ShowArray(array,true);
+            var someName = "Евгения";
+            Console.WriteLine(someName);
+            GetName(ref someName);
+            Console.WriteLine(someName);
         }
     }
 }
